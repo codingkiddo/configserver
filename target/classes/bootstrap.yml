@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+   active: native
+  cloud:
+    config:
+      server: 
+        #Local configuration: This locations can either of classpath or locations in the filesystem.
+        native:
+        #Reads from a specific filesystem folder
+          search-locations: classpath:/config
+        bootstrap: true
+        git:
+          username: codingkiddo
+          password: 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
+          uri: https://github.com/codingkiddo/configserver.git
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+          searchPaths: licensingservice
+    
+server:
+  port: 8071
+  
+encrypt:
+  key: fje83Ki8403Iod87dne7Yjsl3THueh48jfuO9j4U2hf64Lo 
+
+
+#Enable all Spring Boot Actuator endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
