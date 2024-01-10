@@ -1,6 +1,6 @@
 spring:
   application:
-    name: config-server
+    name: configserver
   profiles:
    active: native
   cloud:
@@ -10,16 +10,7 @@ spring:
         native:
         #Reads from a specific filesystem folder
           search-locations: classpath:/config
-        bootstrap: true
-        git:
-          username: codingkiddo
-          password: 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
-          uri: https://github.com/codingkiddo/configserver.git
-          default-label: main
-          timeout: 5
-          clone-on-start: true
-          force-pull: true
-          searchPaths: licensingservice
+        
     
 server:
   port: 8071
