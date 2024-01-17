@@ -5,7 +5,9 @@ eureka:
   instance:
     preferIpAddress: true
   client:
-    registerWithEureka: true
+    webclient:
+       enabled: true
+    registerWithEureka: false
     fetchRegistry: true
     serviceUrl:
       #defaultZone: http://localhost:8070/eureka/
@@ -14,8 +16,11 @@ eureka:
  
 spring:
   cloud:
-    loadbalancer.ribbon.enabled: false
+    loadbalancer: 
+       configurations: health-check # Required for enabling SDC with health checks
     gateway:
+        httpclient:
+            wiretap: true
         routes:
         - id: organization-service
           uri: lb://organization-service
