@@ -4,4 +4,4 @@
 organization
 
 
-http://localhost:8072/organization-service/v1/organization/958aa1bf-18dc-405c-b84a-b69f04d98d4f
+http://localhost:8072/organization/v1/organization/e6a625cc-718b-48c2-ac76-1dfdff9a531e
