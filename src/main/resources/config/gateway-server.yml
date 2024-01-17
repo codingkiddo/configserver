@@ -11,7 +11,7 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       #defaultZone: http://localhost:8070/eureka/
-      http://eurekaserver:8070/eureka/
+      http://eureka-server:8070/eureka/
       
  
 spring:
