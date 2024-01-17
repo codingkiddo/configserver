@@ -16,10 +16,25 @@ eureka:
  
 spring:
   cloud:
-     gateway:
+    loadbalancer.ribbon.enabled: false
+    gateway:
         discovery.locator:
-           enabled: true
-           lowerCaseServiceId: true
+          enabled: true
+          lowerCaseServiceId: true
+        routes:
+        - id: organization-service
+          uri: lb://organization-service
+          predicates:
+             - Path=/organization/**
+          filters:
+             - RewritePath=/organization/(?<path>.*), /$\{path}
+        - id: licensing-service
+          uri: lb://licensing-service
+          predicates:
+             - Path=/license/**
+          filters:
+             - RewritePath=/license/(?<path>.*), /$\{path}
+             - RemoveRequestHeader= Cookie,Set-Cookie
 
        
 management:
