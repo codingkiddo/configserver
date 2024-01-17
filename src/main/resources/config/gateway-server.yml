@@ -16,12 +16,10 @@ eureka:
  
 spring:
   cloud:
-    loadbalancer: 
-       configurations: health-check # Required for enabling SDC with health checks
-    gateway:
-       discovery.locator:
-          enabled: true
-          lowerCaseServiceId: true
+     gateway:
+        discovery.locator:
+           enabled: true
+           lowerCaseServiceId: true
 
        
 management:
