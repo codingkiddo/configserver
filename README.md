@@ -10,6 +10,10 @@ http://localhost:8072/organization/v1/organization/e6a625cc-718b-48c2-ac76-1dfdf
 
 http://localhost:8072/license/v1/organization/e839ee96-28de-4f67-bb79-870ca89743a0/license/279709ff-e6d5-4a54-8b55-a5c37542025b
 
+export DOCKER_HOST="tcp://192.168.1.9:2375"
+
+
+docker -H tcp://192.168.1.9:2375 exec -it postgres bash
 docker exec -it postgres bash
 \l
 \c postgres
